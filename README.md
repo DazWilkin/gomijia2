@@ -79,4 +79,4 @@ I've configured Prometheus to scrape the MQTTGateway metrics.
 
 Here's the result:
 
-
+![Prometheus](./prometheus.png)
