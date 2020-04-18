@@ -2,7 +2,7 @@
 
 ## Credits:
 
-+ [Johnathan McDowell](https://github.com/u1f35c) for [gomijia](https://github.com/u1f35c/gomijia) and [help](https://github.com/u1f35c/gomijia/issues/1)
++ [Jonathan McDowell](https://github.com/u1f35c) for [gomijia](https://github.com/u1f35c/gomijia) and [help](https://github.com/u1f35c/gomijia/issues/1)
 + [JsBergbau](https://github.com/JsBergbau) for [help](https://github.com/JsBergbau/MiTemperature2/issues/29#issuecomment-614314939)
 
 ## Summary
