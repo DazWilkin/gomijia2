@@ -58,13 +58,23 @@ func (m *MQTT) Disconnect() {
 
 // Publish publishes a message to an MQTT topic
 func (m *MQTT) Publish(name string, r *Reading) {
-	log.Printf("[MQTT] Publishing %s (%s)", name, r.String())
+	log.Printf("[MQTT:Publish] %s (%s)", name, r.String())
 	format := "prometheus/job/%s/node/%s/%s"
 
 	// Publish Temperature
-	m.Client.Publish(fmt.Sprintf(format, m.id, name, "temperature"), 0, false, fmt.Sprintf("%04f", r.Temperature))
-
+	{
+		topic := fmt.Sprintf(format, m.id, name, "temperature")
+		value := fmt.Sprintf("%04f", r.Temperature)
+		m.publish(topic, value)
+	}
 	// Publish Humidity
-	m.Client.Publish(fmt.Sprintf(format, m.id, name, "humidity"), 0, false, fmt.Sprintf("%04f", r.Humidity))
-
+	{
+		topic := fmt.Sprintf(format, m.id, name, "humidity")
+		value := fmt.Sprintf("%04f", r.Humidity)
+		m.publish(topic, value)
+	}
+}
+func (m *MQTT) publish(topic string, payload interface{}) {
+	log.Printf("[MQTT:publish] %s (%v)", topic, payload)
+	m.Client.Publish(topic, 0, false, payload)
 }
