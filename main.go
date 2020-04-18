@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	configFile = flag.String("config_file", "gomijia.ini", "Config file location")
+	configFile = flag.String("config_file", "config.ini", "Config file location")
 )
 
 func main() {
