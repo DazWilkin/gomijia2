@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"log"
+	"runtime"
 
 	"github.com/currantlabs/ble/linux"
 )
@@ -46,6 +47,7 @@ func main() {
 
 	// Loop forever while notification handler respond
 	for {
+		runtime.Gosched()
 	}
 
 	// for _, device := range config.Devices {
