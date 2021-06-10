@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"log"
-	"time"
+	"sync"
 
 	"github.com/currantlabs/ble/linux"
 )
@@ -46,10 +46,10 @@ func main() {
 	}
 
 	// Loop forever while notification handler respond
+	wg := sync.WaitGroup{}
+	wg.Add(1)
 	for {
-		select {
-		case <-time.After(time.Second):
-		}
+		wg.Wait()
 	}
 
 	// for _, device := range config.Devices {
