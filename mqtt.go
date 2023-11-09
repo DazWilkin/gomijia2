@@ -73,6 +73,12 @@ func (m *MQTT) Publish(name string, r *Reading) {
 		value := fmt.Sprintf("%04f", r.Humidity)
 		m.publish(topic, value)
 	}
+	// Publish Battery voltage
+	{
+		topic := fmt.Sprintf(format, m.id, name, "battery")
+		value := fmt.Sprintf("%04f", r.Battery)
+		m.publish(topic, value)
+	}
 }
 func (m *MQTT) publish(topic string, payload interface{}) {
 	log.Printf("[MQTT:publish] %s (%v)", topic, payload)
