@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"log"
+	"sync"
 
 	"github.com/currantlabs/ble/linux"
 )
@@ -45,7 +46,10 @@ func main() {
 	}
 
 	// Loop forever while notification handler respond
+	wg := sync.WaitGroup{}
+	wg.Add(1)
 	for {
+		wg.Wait()
 	}
 
 	// for _, device := range config.Devices {
