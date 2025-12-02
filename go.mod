@@ -1,11 +1,11 @@
 module github.com/DazWilkin/gomijia2
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/currantlabs/ble v0.0.0-20171229162446-c1d21c164cf8
-	github.com/eclipse/paho.mqtt.golang v1.5.0
-	golang.org/x/net v0.38.0
+	github.com/eclipse/paho.mqtt.golang v1.5.1
+	golang.org/x/net v0.44.0
 	gopkg.in/ini.v1 v1.67.0
 )
 
@@ -17,6 +17,6 @@ require (
 	github.com/mgutz/logxi v0.0.0-20161027140823-aebf8a7d67ab // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
-	golang.org/x/sync v0.12.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/sync v0.17.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
 )
